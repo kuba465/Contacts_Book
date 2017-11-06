@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Strona główna
+{% endblock %}
+
+{% block header %}
+    <h1>Twoje kontakty: </h1>
+{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for user in users %}
+            <li>
+                <a href="{{ url('showUser', {'id':user.id}) }}">
+                    {{ user.firstname }} {{ user.lastname }}
+                </a>
+                <a href="{{ url('modify', {'id':user.id}) }}">
+                    <button type="button" class="btn btn-warning">Edytuj użytkownika</button>
+                </a>
+                <a href="{{ url('delete', {'id':user.id}) }}">
+                    <button type="button" class="btn btn-danger">Usuń kontakt</button>
+                </a>
+            </li>
+        {% else %}
+            <p>Nie masz kontaktów</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

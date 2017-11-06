@@ -1,0 +1,20 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Widok kontaktu
+{% endblock %}
+
+{% block header %}
+    <a href="{{ url('modify', {'id':user.id}) }}">
+        <button type="button" class="btn btn-warning">Edytuj użytkownika</button>
+    </a>
+    <a href="{{ url('delete', {'id':user.id}) }}">
+        <button type="button" class="btn btn-danger">Usuń kontakt</button>
+    </a>
+{% endblock %}
+
+{% block body %}
+    <p>Nazwa kontaktu: {{ user.firstname }} {{ user.lastname }}</p>
+    <p>Opis: {{ user.description }}</p>
+{% endblock %}
