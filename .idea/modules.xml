@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Contacts_Book.iml" filepath="$PROJECT_DIR$/.idea/Contacts_Book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/.idea/POZ_PHP_W_02_Symfony_2.iml" filepath="$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/.idea/POZ_PHP_W_02_Symfony_2.iml" />
     </modules>
   </component>
 </project>
