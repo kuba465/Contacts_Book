@@ -96,10 +96,20 @@ class UserController extends Controller
     /**
      * @Route("/", name="showAll")
      */
-    public function showAllAction()
+    public function showAllAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository("ContactsBundle:User");
+
+        $name = $request->request->get('name');
+        if (!is_null($name)) {
+            $users = $em->getRepository("ContactsBundle:User")->searchForUserByFirstOrLastName($name);
+            if (count($users) > 0) {
+                return $this->render('ContactsBundle:User:show_all.html.twig', array(
+                    'users' => $users
+                ));
+            }
+        }
 
         $users = $repository->findAll();
 

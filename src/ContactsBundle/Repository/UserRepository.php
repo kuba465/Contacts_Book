@@ -30,4 +30,16 @@ class UserRepository extends EntityRepository
             ->setParameter('userId', $id);
         $queryForAddresses->execute();
     }
+
+    public function searchForUserByFirstOrLastName($string)
+    {
+        $em = $this->getEntityManager();
+        $query = $em
+            ->createQuery('SELECT users FROM ContactsBundle:User users WHERE users.firstname LIKE :firstname OR users.lastname LIKE :lastname')
+            ->setParameter('firstname', "%" . $string . "%")
+            ->setParameter('lastname', "%" . $string . "%");
+        $users = $query->getResult();
+
+        return $users;
+    }
 }

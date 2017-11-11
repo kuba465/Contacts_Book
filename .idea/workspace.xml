@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="958335c2-3de4-4ebf-a090-818d5cb76c1b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Controller/AddressController.php" afterPath="$PROJECT_DIR$/src/ContactsBundle/Controller/AddressController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Controller/EmailController.php" afterPath="$PROJECT_DIR$/src/ContactsBundle/Controller/EmailController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Controller/PhoneController.php" afterPath="$PROJECT_DIR$/src/ContactsBundle/Controller/PhoneController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/ContactsBundle/Controller/UserController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/ContactsBundle/Repository/UserRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Resources/views/Address/delete_address.html.twig" afterPath="$PROJECT_DIR$/src/ContactsBundle/Resources/views/Address/delete_address.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Resources/views/Email/delete_email.html.twig" afterPath="$PROJECT_DIR$/src/ContactsBundle/Resources/views/Email/delete_email.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ContactsBundle/Resources/views/Phone/delete_phone.html.twig" afterPath="$PROJECT_DIR$/src/ContactsBundle/Resources/views/Phone/delete_phone.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/.idea/POZ_PHP_W_02_Symfony_2.iml" afterPath="$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/.idea/POZ_PHP_W_02_Symfony_2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/.idea/workspace.xml" />
     </list>
@@ -23,13 +17,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-72">
-              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
               <folding>
                 <element signature="e#45#76#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/1_Zadania/Tydzien_1/Dzien_3/4_Model_i_Doctrine/1_Doctrine/project_model/src/AppBundle/Repository/BookRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="738">
+              <caret line="41" column="34" lean-forward="false" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="34" />
+              <folding>
+                <marker date="1509485006594" expanded="true" signature="373:432" ph="SELECT books... AppBundle" />
+                <marker date="1509485006594" expanded="true" signature="659:726" ph="SELECT books... AppBundle" />
+                <marker date="1509485006594" expanded="true" signature="960:1029" ph="SELECT books... AppBundle" />
+                <marker date="1509485006594" expanded="true" signature="1262:1331" ph="SELECT books... AppBundle" />
               </folding>
             </state>
           </provider>
@@ -38,8 +47,20 @@
       <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="702">
+              <caret line="39" column="54" lean-forward="false" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
+              <folding>
+                <marker date="1510412127907" expanded="true" signature="1137:1251" ph="SELECT users... ContactsBundle" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -48,18 +69,8 @@
       <file leaf-file-name="show_all.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Resources/views/User/show_all.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -96,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/ContactsBundle/Form/EmailType.php" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Form/PhoneType.php" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Form/UserType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Resources/views/User/show_all.html.twig" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Resources/views/Phone/edit_phone.html.twig" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Resources/views/error.html" />
@@ -113,9 +123,10 @@
         <option value="$PROJECT_DIR$/src/ContactsBundle/Controller/EmailController.php" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Controller/AddressController.php" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Entity/Phone.php" />
-        <option value="$PROJECT_DIR$/src/ContactsBundle/Controller/UserController.php" />
         <option value="$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/1_Zadania/Tydzien_1/Dzien_3/4_Model_i_Doctrine/1_Doctrine/project_model/src/AppBundle/Repository/BookRepository.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/ContactsBundle/Repository/UserRepository.php" />
+        <option value="$PROJECT_DIR$/src/ContactsBundle/Controller/UserController.php" />
       </list>
     </option>
   </component>
@@ -320,19 +331,6 @@
               <item name="project_model" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Contacts_Book" type="b2602c69:ProjectViewProjectNode" />
-              <item name="POZ_PHP_W_02_Symfony_2" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="1_Zadania" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Tydzien_1" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Dzien_3" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="4_Model_i_Doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="1_Doctrine" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="project_model" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -371,12 +369,12 @@
       <updated>1509879019194</updated>
       <workItem from="1509879020360" duration="20596000" />
       <workItem from="1510256423613" duration="12000" />
-      <workItem from="1510257241125" duration="21306000" />
+      <workItem from="1510257241125" duration="23348000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41914000" />
+    <option name="totallyTimeSpent" value="43956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
@@ -412,16 +410,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#45#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -506,14 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-81">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3553">
-          <caret line="227" column="14" lean-forward="false" selection-start-line="227" selection-start-column="14" selection-end-line="227" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,6 +725,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Form/UserType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="113" lean-forward="false" selection-start-line="21" selection-start-column="113" selection-end-line="21" selection-end-column="113" />
+          <folding>
+            <element signature="e#39#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/1_Zadania/Tydzien_1/Dzien_1/2_Kontrolery_i_routing/1_Kontroler_podstawy_użycia/projekt_controler/src/AppBundle/Controller/FirstController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/1_Zadania/Tydzien_1/Dzien_1/2_Kontrolery_i_routing/1_Kontroler_podstawy_użycia/projekt_controler/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Resources/views/User/show_all.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3751">
+          <caret line="227" column="14" lean-forward="false" selection-start-line="227" selection-start-column="14" selection-end-line="227" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/1_Zadania/Tydzien_1/Dzien_1/2_Kontrolery_i_routing/1_Kontroler_podstawy_użycia/projekt_controler/src/AppBundle/Controller/FooController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../POZ_PHP_W_02_Symfony_2/1_Zadania/Tydzien_1/Dzien_3/4_Model_i_Doctrine/1_Doctrine/project_model/src/AppBundle/Repository/BookRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
@@ -760,45 +798,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Form/UserType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="113" lean-forward="false" selection-start-line="21" selection-start-column="113" selection-end-line="21" selection-end-column="113" />
+        <state relative-caret-position="702">
+          <caret line="39" column="54" lean-forward="false" selection-start-line="39" selection-start-column="54" selection-end-line="39" selection-end-column="54" />
           <folding>
-            <element signature="e#39#79#0#PHP" expanded="true" />
+            <marker date="1510412127907" expanded="true" signature="1137:1251" ph="SELECT users... ContactsBundle" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
           <folding>
             <element signature="e#45#76#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ContactsBundle/Resources/views/User/show_all.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
