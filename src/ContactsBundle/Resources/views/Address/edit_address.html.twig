@@ -1,7 +1,30 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}ContactsBundle:Address:editAddress{% endblock %}
+{% block title %}
+    {{ parent() }}
+    Edytuj adres
+{% endblock %}
 
+{% block header %}
+    <h1>Edycja istniejącego adresu:</h1>
+{% endblock %}
 {% block body %}
-<h1>Welcome to the Address:editAddress page</h1>
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.city) }}
+        {{ form_widget(form.city) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.street) }}
+        {{ form_widget(form.street) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.houseNumber) }}
+        {{ form_widget(form.houseNumber) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.flatNumber) }}
+        {{ form_widget(form.flatNumber) }}
+    </div>
+    {{ form_end(form) }}
 {% endblock %}

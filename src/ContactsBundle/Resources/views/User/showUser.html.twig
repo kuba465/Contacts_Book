@@ -44,10 +44,14 @@
     </div>
     <div class="user_emails">
         <h3>Adresy e-mail:</h3>
+        <a href="{{ url('addEmail', {'userId':user.id}) }}">
+            <button type="button" class="btn btn-warning">Dodaj nowy</button>
+        </a>
         <ul class="list-group">
             {% for email in emails %}
             <li class="list-group-item">
-                {{ email.email }} - {{ email.type }}
+                {{ email.email }}
+                {{ email.type is not null ? " - " ~ email.type : "" }}
                 <a href="{{ url('editEmail', {'emailId':email.id, 'userId' : user.id}) }}">
                     <button type="button" class="btn btn-warning btn-xs">Edytuj</button>
                 </a>
@@ -62,11 +66,14 @@
     </div>
     <div class="user_addresses">
         <h3>Adresy:</h3>
+        <a href="{{ url('addAddress', {'userId':user.id}) }}">
+            <button type="button" class="btn btn-warning">Dodaj nowy</button>
+        </a>
         <ul class="list-group">
             {% for address in addresses %}
             <li class="list-group-item">
                 {{ address.street }} {{ address.houseNumber }}
-                {{ (address.flatNumber is not null)? "/" ~ address.flatNumber : "" }}
+                {{ (address.flatNumber is not null)? "/ " ~ address.flatNumber : "" }}
                 {{ address.city }}
                 <a href="{{ url('editAddress', {'addressId':address.id, 'userId' : user.id}) }}">
                     <button type="button" class="btn btn-warning btn-xs">Edytuj</button>

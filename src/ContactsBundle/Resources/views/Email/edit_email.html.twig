@@ -1,7 +1,23 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}ContactsBundle:Email:editEmail{% endblock %}
+{% block title %}
+    {{ parent() }}
+    Edytuj adres e-mail
+{% endblock %}
+
+{% block header %}
+    <h1>Edycja istniejącego e-maila:</h1>
+{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Email:editEmail page</h1>
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.type) }}
+        {{ form_widget(form.type) }}
+    </div>
+    {{ form_end(form) }}
 {% endblock %}

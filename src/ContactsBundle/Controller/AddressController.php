@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 class AddressController extends Controller
 {
     /**
-     * @Route("/{id}/addAddress", name="addAddress")
+     * @Route("/{userId}/addAddress", name="addAddress")
      */
-    public function addAddressAction(Request $request, $id)
+    public function addAddressAction(Request $request, $userId)
     {
         $address = new Address();
 
@@ -24,13 +24,13 @@ class AddressController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $address = $form->getData();
             $em = $this->getDoctrine()->getManager();
-            $user = $em->getRepository("ContactsBundle:User")->findOneById($id);
+            $user = $em->getRepository("ContactsBundle:User")->findOneById($userId);
 
             $address->setUser($user);
             $em->persist($address);
             $em->flush();
 
-            return $this->redirectToRoute("showUser", ["id" => $id]);
+            return $this->redirectToRoute("showUser", ["id" => $userId]);
 
         }
 
@@ -42,9 +42,30 @@ class AddressController extends Controller
     /**
      * @Route("/{userId}/{addressId}/editAddress", name="editAddress")
      */
-    public function editAddressAction()
+    public function editAddressAction(Request $request, $userId, $addressId)
     {
-        return $this->render('ContactsBundle:Address:edit_address.html.twig', array(// ...
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('ContactsBundle:Address');
+        $address = $repository->findOneById($addressId);
+
+        if (!$address || !$em->getRepository("ContactsBundle:User")->findOneById($userId)) {
+            return $this->redirectToRoute("showUser", ["id" => $userId]);
+        }
+
+        $form = $this->createForm(AddressType::class, $address);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $address = $form->getData();
+            $em->persist($address);
+            $em->flush();
+
+            return $this->redirectToRoute("showUser", ["id" => $userId]);
+        }
+
+        return $this->render('ContactsBundle:Address:edit_address.html.twig', array(
+            'form' => $form->createView()
         ));
     }
 
