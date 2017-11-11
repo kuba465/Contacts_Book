@@ -74,19 +74,20 @@ class PhoneController extends Controller
     /**
      * @Route("/{userId}/{phoneId}/deletePhone", name="deletePhone")
      */
-    public function deletePhoneAction($id)
+    public function deletePhoneAction($userId, $phoneId)
     {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('ContactsBundle:Phone');
+        $phoneToDelete = $repository->findOneById($phoneId);
+
+        if (!$phoneToDelete || !$em->getRepository("ContactsBundle:User")->findOneById($userId)) {
+            return $this->redirectToRoute("showUser", ["id" => $userId]);
+        }
+
+        $em->remove($phoneToDelete);
+        $em->flush();
+
         return $this->render('ContactsBundle:Phone:delete_phone.html.twig', array(// ...
         ));
     }
-
-    /**
-     * @Route("/showAllPhones")
-     */
-    public function showAllPhonesAction()
-    {
-        return $this->render('ContactsBundle:Phone:show_all_phones.html.twig', array(// ...
-        ));
-    }
-
 }

@@ -83,6 +83,9 @@ class UserController extends Controller
             return $this->redirectToRoute("showAll");
         }
 
+        $doctrine = $this->getDoctrine();
+        $doctrine->getRepository("ContactsBundle:User")->deleteAllStuffConnectWithUser($id);
+
         $em->remove($userToDelete);
         $em->flush();
 

@@ -72,18 +72,20 @@ class EmailController extends Controller
     /**
      * @Route("/{userId}/{emailId}/deleteEmail", name="deleteEmail")
      */
-    public function deleteEmailAction()
+    public function deleteEmailAction($userId, $emailId)
     {
-        return $this->render('ContactsBundle:Email:delete_email.html.twig', array(// ...
-        ));
-    }
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('ContactsBundle:Email');
+        $emailToDelete = $repository->findOneById($emailId);
 
-    /**
-     * @Route("/showAllEmails")
-     */
-    public function showAllEmailsAction()
-    {
-        return $this->render('ContactsBundle:Email:show_all_emails.html.twig', array(// ...
+        if (!$emailToDelete || !$em->getRepository("ContactsBundle:User")->findOneById($userId)) {
+            return $this->redirectToRoute("showUser", ["id" => $userId]);
+        }
+
+        $em->remove($emailToDelete);
+        $em->flush();
+
+        return $this->render('ContactsBundle:Email:delete_email.html.twig', array(// ...
         ));
     }
 

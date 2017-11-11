@@ -70,20 +70,22 @@ class AddressController extends Controller
     }
 
     /**
-     * @Route("/deleteAddress", name="deleteAddress")
+     * @Route("/{userId}/{addressId}/deleteAddress", name="deleteAddress")
      */
-    public function deleteAddressAction()
+    public function deleteAddressAction($userId, $addressId)
     {
-        return $this->render('ContactsBundle:Address:delete_address.html.twig', array(// ...
-        ));
-    }
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('ContactsBundle:Address');
+        $addressToDelete = $repository->findOneById($addressId);
 
-    /**
-     * @Route("/showAllAddresses")
-     */
-    public function showAllAddressesAction()
-    {
-        return $this->render('ContactsBundle:Address:show_all_addresses.html.twig', array(// ...
+        if (!$addressToDelete || !$em->getRepository("ContactsBundle:User")->findOneById($userId)) {
+            return $this->redirectToRoute("showUser", ["id" => $userId]);
+        }
+
+        $em->remove($addressToDelete);
+        $em->flush();
+
+        return $this->render('ContactsBundle:Address:delete_address.html.twig', array(// ...
         ));
     }
 

@@ -1,7 +1,10 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}ContactsBundle:Address:deleteAddress{% endblock %}
+{% block title %}
+    {{ parent() }}
+    Adres usunięty
+{% endblock %}
 
-{% block body %}
-<h1>Welcome to the Address:deleteAddress page</h1>
+{% block header %}
+    <h1>Brawo! Usunąłeś adres</h1>
 {% endblock %}
