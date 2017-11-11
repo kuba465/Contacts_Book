@@ -23,9 +23,9 @@ class Phone
     private $id;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="number", type="integer")
+     * @ORM\Column(name="number", type="string", length=15)
      */
     private $number;
 
@@ -55,7 +55,7 @@ class Phone
     /**
      * Set number
      *
-     * @param integer $number
+     * @param string $number
      *
      * @return Phone
      */
@@ -69,7 +69,7 @@ class Phone
     /**
      * Get number
      *
-     * @return int
+     * @return string
      */
     public function getNumber()
     {

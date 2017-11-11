@@ -39,9 +39,9 @@ class Address
     private $street;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="house_number", type="integer")
+     * @ORM\Column(name="house_number", type="string", length=5)
      */
     private $houseNumber;
 
@@ -119,7 +119,7 @@ class Address
     /**
      * Set houseNumber
      *
-     * @param integer $houseNumber
+     * @param string $houseNumber
      *
      * @return Address
      */
@@ -133,7 +133,7 @@ class Address
     /**
      * Get houseNumber
      *
-     * @return int
+     * @return string
      */
     public function getHouseNumber()
     {

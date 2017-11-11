@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Dodaj adres
+{% endblock %}
+
+{% block header %}
+    <h1>Dodawanie adresu:</h1>
+{% endblock %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.city) }}
+        {{ form_widget(form.city) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.street) }}
+        {{ form_widget(form.street) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.houseNumber) }}
+        {{ form_widget(form.houseNumber) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.flatNumber) }}
+        {{ form_widget(form.flatNumber) }}
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

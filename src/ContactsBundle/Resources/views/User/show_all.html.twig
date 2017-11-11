@@ -10,17 +10,17 @@
 {% endblock %}
 
 {% block body %}
-    <ul>
+    <ul class="list-group">
         {% for user in users %}
-            <li>
+            <li class="list-group-item">
                 <a href="{{ url('showUser', {'id':user.id}) }}">
                     {{ user.firstname }} {{ user.lastname }}
                 </a>
                 <a href="{{ url('modify', {'id':user.id}) }}">
-                    <button type="button" class="btn btn-warning">Edytuj użytkownika</button>
+                    <button type="button" class="btn btn-warning btn-sm">Edytuj użytkownika</button>
                 </a>
                 <a href="{{ url('delete', {'id':user.id}) }}">
-                    <button type="button" class="btn btn-danger">Usuń kontakt</button>
+                    <button type="button" class="btn btn-danger btn-sm">Usuń kontakt</button>
                 </a>
             </li>
         {% else %}

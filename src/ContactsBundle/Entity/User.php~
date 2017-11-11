@@ -3,6 +3,8 @@
 namespace ContactsBundle\Entity;
 
 use ContactsBundle\Entity\Address;
+use ContactsBundle\Entity\Email;
+use ContactsBundle\Entity\Phone;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -142,4 +144,115 @@ class User
         return $this->description;
     }
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->addresses = new ArrayCollection();
+        $this->phones = new ArrayCollection();
+        $this->emails = new ArrayCollection();
+    }
+
+    /**
+     * Add address
+     *
+     * @param Address $address
+     *
+     * @return User
+     */
+    public function addAddress(Address $address)
+    {
+        $this->addresses[] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Remove address
+     *
+     * @param Address $address
+     */
+    public function removeAddress(Address $address)
+    {
+        $this->addresses->removeElement($address);
+    }
+
+    /**
+     * Get addresses
+     *
+     * @return Collection
+     */
+    public function getAddresses()
+    {
+        return $this->addresses;
+    }
+
+    /**
+     * Add phone
+     *
+     * @param Phone $phone
+     *
+     * @return User
+     */
+    public function addPhone(Phone $phone)
+    {
+        $this->phones[] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Remove phone
+     *
+     * @param Phone $phone
+     */
+    public function removePhone(Phone $phone)
+    {
+        $this->phones->removeElement($phone);
+    }
+
+    /**
+     * Get phones
+     *
+     * @return Collection
+     */
+    public function getPhones()
+    {
+        return $this->phones;
+    }
+
+    /**
+     * Add email
+     *
+     * @param Email $email
+     *
+     * @return User
+     */
+    public function addEmail(Email $email)
+    {
+        $this->emails[] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Remove email
+     *
+     * @param Email $email
+     */
+    public function removeEmail(Email $email)
+    {
+        $this->emails->removeElement($email);
+    }
+
+    /**
+     * Get emails
+     *
+     * @return Collection
+     */
+    public function getEmails()
+    {
+        return $this->emails;
+    }
 }

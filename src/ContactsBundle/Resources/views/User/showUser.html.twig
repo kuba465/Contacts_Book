@@ -1,5 +1,6 @@
 {% extends "::base.html.twig" %}
 
+
 {% block title %}
     {{ parent() }}
     Widok kontaktu
@@ -15,6 +16,68 @@
 {% endblock %}
 
 {% block body %}
-    <p>Nazwa kontaktu: {{ user.firstname }} {{ user.lastname }}</p>
-    <p>Opis: {{ user.description }}</p>
+    <div class="user_datas">
+        <h1>{{ user.firstname }} {{ user.lastname }}</h1>
+        <p>{{ user.description }}</p>
+    </div>
+    <div class="user_phones">
+        <h3>Numery telefonów:</h3>
+        <a href="{{ url('addPhone', {'userId':user.id}) }}">
+            <button type="button" class="btn btn-warning">Dodaj nowy</button>
+        </a>
+        <ul class="list-group">
+            {% for phone in phones %}
+            <li class="list-group-item">
+                {{ phone.number }}
+                {{ phone.type is not null ? " - " ~ phone.type : "" }}
+                <a href="{{ url('editPhone', {'phoneId':phone.id, 'userId' : user.id}) }}">
+                    <button type="button" class="btn btn-warning btn-xs">Edytuj</button>
+                </a>
+                <a href="{{ url('deletePhone', {'phoneId':phone.id, 'userId' : user.id}) }}">
+                    <button type="button" class="btn btn-danger btn-xs">Usuń</button>
+                </a>
+            </li>
+            {% else %}
+        </ul>
+        <p>Brak numerów telefonów!</p>
+        {% endfor %}
+    </div>
+    <div class="user_emails">
+        <h3>Adresy e-mail:</h3>
+        <ul class="list-group">
+            {% for email in emails %}
+            <li class="list-group-item">
+                {{ email.email }} - {{ email.type }}
+                <a href="{{ url('editEmail', {'emailId':email.id, 'userId' : user.id}) }}">
+                    <button type="button" class="btn btn-warning btn-xs">Edytuj</button>
+                </a>
+                <a href="{{ url('deleteEmail', {'emailId':email.id, 'userId' : user.id}) }}">
+                    <button type="button" class="btn btn-danger btn-xs">Usuń</button>
+                </a>
+            </li>
+            {% else %}
+        </ul>
+        <p>Brak adresów e-mail!</p>
+        {% endfor %}
+    </div>
+    <div class="user_addresses">
+        <h3>Adresy:</h3>
+        <ul class="list-group">
+            {% for address in addresses %}
+            <li class="list-group-item">
+                {{ address.street }} {{ address.houseNumber }}
+                {{ (address.flatNumber is not null)? "/" ~ address.flatNumber : "" }}
+                {{ address.city }}
+                <a href="{{ url('editAddress', {'addressId':address.id, 'userId' : user.id}) }}">
+                    <button type="button" class="btn btn-warning btn-xs">Edytuj</button>
+                </a>
+                <a href="{{ url('deleteAddress', {'addressId':address.id, 'userId' : user.id}) }}">
+                    <button type="button" class="btn btn-danger btn-xs">Usuń</button>
+                </a>
+            </li>
+            {% else %}
+        </ul>
+        <p>Brak adresów!</p>
+        {% endfor %}
+    </div>
 {% endblock %}

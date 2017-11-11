@@ -113,8 +113,19 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("ContactsBundle:User")->findOneById($id);
 
+        if (!$user) {
+            return $this->redirectToRoute("showAll");
+        }
+
+        $phones = $em->getRepository("ContactsBundle:Phone")->findByUser($user);
+        $emails = $em->getRepository("ContactsBundle:Email")->findByUser($user);
+        $addresses = $em->getRepository("ContactsBundle:Address")->findByUser($user);
+
         return $this->render("ContactsBundle:User:showUser.html.twig", [
-            'user' => $user
+            'user' => $user,
+            'phones' => $phones,
+            'emails' => $emails,
+            'addresses' => $addresses
         ]);
     }
 

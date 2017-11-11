@@ -6,32 +6,32 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class PhoneControllerTest extends WebTestCase
 {
-    public function testNew()
+    public function testAddphone()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/new');
+        $crawler = $client->request('GET', '/addPhone');
     }
 
-    public function testModify()
+    public function testEditphone()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/modify');
+        $crawler = $client->request('GET', '/editPhone');
     }
 
-    public function testDelete()
+    public function testDeletephone()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/delete');
+        $crawler = $client->request('GET', '/deletePhone');
     }
 
-    public function testShow()
+    public function testShowallphones()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/show');
+        $crawler = $client->request('GET', '/showAllPhones');
     }
 
 }

@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Dodaj adres e-mail
+{% endblock %}
+
+{% block header %}
+    <h1>Dodawanie e-maila:</h1>
+{% endblock %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+    </div>
+    <div class="form-group">
+        {{ form_label(form.type) }}
+        {{ form_widget(form.type) }}
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

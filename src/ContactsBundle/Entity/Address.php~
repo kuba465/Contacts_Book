@@ -39,9 +39,9 @@ class Address
     private $street;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="house_number", type="integer")
+     * @ORM\Column(name="house_number", type="string", length=5)
      */
     private $houseNumber;
 
@@ -119,7 +119,7 @@ class Address
     /**
      * Set houseNumber
      *
-     * @param integer $houseNumber
+     * @param string $houseNumber
      *
      * @return Address
      */
@@ -133,7 +133,7 @@ class Address
     /**
      * Get houseNumber
      *
-     * @return int
+     * @return string
      */
     public function getHouseNumber()
     {
@@ -164,4 +164,28 @@ class Address
         return $this->flatNumber;
     }
 
+
+    /**
+     * Set user
+     *
+     * @param User $user
+     *
+     * @return Address
+     */
+    public function setUser(User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

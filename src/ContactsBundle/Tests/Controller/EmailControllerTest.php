@@ -6,32 +6,32 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class EmailControllerTest extends WebTestCase
 {
-    public function testNew()
+    public function testAddemail()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/new');
+        $crawler = $client->request('GET', '/addEmail');
     }
 
-    public function testModify()
+    public function testEditemail()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/modify');
+        $crawler = $client->request('GET', '/editEmail');
     }
 
-    public function testDelete()
+    public function testDeleteemail()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/delete');
+        $crawler = $client->request('GET', '/deleteEmail');
     }
 
-    public function testShow()
+    public function testShowallemails()
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/show');
+        $crawler = $client->request('GET', '/showAllEmails');
     }
 
 }

@@ -4,12 +4,11 @@ namespace ContactsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class UserType extends AbstractType
+class PhoneType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -17,19 +16,18 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', TextType::class, ['attr' => ['class' => "form-control"]])
-            ->add('lastname', TextType::class, ['attr' => ['class' => "form-control"], 'required' => false])
-            ->add('description', TextareaType::class, ['attr' => ['class' => "form-control"], 'required' => false])
-            ->add('save', SubmitType::class, ['label' => 'Zapisz kontakt'], ['attr' => ['class' => "btn btn-default"]]);
+            ->add('number', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('type', TextType::class, ['attr' => ['class' => 'form-control'], 'required' => false])
+            ->add('save', SubmitType::class, ['label' => 'Zapisz nr telefonu'], ['attr' => ['class' => "btn btn-default"]]);
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ContactsBundle\Entity\User'
+            'data_class' => 'ContactsBundle\Entity\Phone'
         ));
     }
 
@@ -38,7 +36,7 @@ class UserType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'contactsbundle_user';
+        return 'contactsbundle_phone';
     }
 
 
