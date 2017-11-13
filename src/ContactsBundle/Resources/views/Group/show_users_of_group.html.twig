@@ -1,0 +1,30 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Grupa - {{ group.name }}
+{% endblock %}
+
+{% block header %}
+    <h1>Twoje kontakty w tej grupie: </h1>
+{% endblock %}
+
+{% block body %}
+    <ul class="list-group">
+        {% for user in users %}
+            <li class="list-group-item">
+                <a href="{{ url('showUser', {'id':user.id}) }}">
+                    {{ user.firstname }} {{ user.lastname }}
+                </a>
+                <a href="{{ url('modify', {'id':user.id}) }}">
+                    <button type="button" class="btn btn-warning btn-sm">Edytuj użytkownika</button>
+                </a>
+                <a href="{{ url('deleteUserFromGroup', {'userId':user.id, 'groupId':group.id}) }}">
+                    <button type="button" class="btn btn-danger btn-sm">Usuń kontakt</button>
+                </a>
+            </li>
+        {% else %}
+            <p>Nie masz kontaktów</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

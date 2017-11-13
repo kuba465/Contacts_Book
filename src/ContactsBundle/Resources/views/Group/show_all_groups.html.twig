@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+    {{ parent() }}
+    Grupy
+{% endblock %}
+
+{% block header %}
+    <h1>Twoje grupy: </h1>
+    <a href="{{ url('addGroup') }}">
+        <button type="button" class="btn btn-warning btn-lg">Dodaj grupę</button>
+    </a>
+{% endblock %}
+
+{% block body %}
+    <ul class="list-group">
+        {% for group in groups %}
+            <li class="list-group-item">
+                <a href="{{ url('showUsersOfGroup', {'id':group.id}) }}">
+                    {{ group.name }}
+                </a>
+                <a href="{{ url('editGroup', {'id':group.id}) }}">
+                    <button type="button" class="btn btn-warning btn-sm">Edytuj grupę</button>
+                </a>
+                <a href="{{ url('deleteGroup', {'id':group.id}) }}">
+                    <button type="button" class="btn btn-danger btn-sm">Usuń grupę</button>
+                </a>
+            </li>
+        {% else %}
+            <p>Nie masz grup</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

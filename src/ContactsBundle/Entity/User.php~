@@ -63,6 +63,12 @@ class User
     private $emails;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Group", inversedBy="users")
+     * @ORM\JoinTable(name="users_groups")
+     */
+    private $groups;
+
+    /**
      * Get id
      *
      * @return int
@@ -254,5 +260,39 @@ class User
     public function getEmails()
     {
         return $this->emails;
+    }
+
+    /**
+     * Add group
+     *
+     * @param \ContactsBundle\Entity\Group $group
+     *
+     * @return User
+     */
+    public function addGroup(\ContactsBundle\Entity\Group $group)
+    {
+        $this->groups[] = $group;
+
+        return $this;
+    }
+
+    /**
+     * Remove group
+     *
+     * @param \ContactsBundle\Entity\Group $group
+     */
+    public function removeGroup(\ContactsBundle\Entity\Group $group)
+    {
+        $this->groups->removeElement($group);
+    }
+
+    /**
+     * Get groups
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGroups()
+    {
+        return $this->groups;
     }
 }
