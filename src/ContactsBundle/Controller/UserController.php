@@ -3,6 +3,7 @@
 namespace ContactsBundle\Controller;
 
 use ContactsBundle\Entity\User;
+use ContactsBundle\Form\UserGroupType;
 use ContactsBundle\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -27,6 +28,14 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
             $em = $this->getDoctrine()->getManager();
+
+            $groups = $user->getGroups();
+            if (!is_null($groups)) {
+                foreach ($groups as $group) {
+                    $group->addUser($user);
+                }
+            }
+
             $em->persist($user);
             $em->flush();
 
@@ -134,11 +143,14 @@ class UserController extends Controller
         $emails = $em->getRepository("ContactsBundle:Email")->findByUser($user);
         $addresses = $em->getRepository("ContactsBundle:Address")->findByUser($user);
 
+        $groups = $user->getGroups();
+
         return $this->render("ContactsBundle:User:showUser.html.twig", [
             'user' => $user,
             'phones' => $phones,
             'emails' => $emails,
-            'addresses' => $addresses
+            'addresses' => $addresses,
+            'groups' => $groups
         ]);
     }
 

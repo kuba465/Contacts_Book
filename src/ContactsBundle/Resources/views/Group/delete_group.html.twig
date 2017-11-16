@@ -1,7 +1,10 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}ContactsBundle:Group:deleteGroup{% endblock %}
+{% block title %}
+    {{ parent() }}
+    Grupa usunięta
+{% endblock %}
 
-{% block body %}
-<h1>Welcome to the Group:deleteGroup page</h1>
+{% block header %}
+    <h1>Brawo! Usunąłeś grupę!</h1>
 {% endblock %}

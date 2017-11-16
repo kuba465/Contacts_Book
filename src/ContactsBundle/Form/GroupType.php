@@ -26,7 +26,7 @@ class GroupType extends AbstractType
                     return $user->getFirstName() . ' ' . $user->getLastName();
                 },
                 'expanded' => true,
-                'multiple' => true,
+                'multiple' => true
             ])
             ->add('save', SubmitType::class, ['label' => 'Zapisz grupę'], ['attr' => ['class' => "btn btn-default"]]);
     }

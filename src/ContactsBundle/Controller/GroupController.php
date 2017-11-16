@@ -29,8 +29,10 @@ class GroupController extends Controller
 
             //pobieram użytkowników i dodaję każdemu grupę
             $users = $group->getUsers();
-            foreach ($users as $user) {
-                $user->addGroup($group);
+            if (!is_null($users)) {
+                foreach ($users as $user) {
+                    $user->addGroup($group);
+                }
             }
 
             $em->persist($group);
@@ -65,13 +67,16 @@ class GroupController extends Controller
             $group = $form->getData();
             $em = $this->getDoctrine()->getManager();
 
-            $users = $group->getUsers();
-            foreach ($users as $user) {
-                $user->addGroup($group);
-            }
-
             $em->persist($group);
             $em->flush();
+
+            $users = $group->getUsers();
+            foreach ($users as $user) {
+                if (!$group->getUsers()->contains($user)) {
+                    $user->addGroup($group);
+                }
+            }
+
 
             return $this->redirectToRoute("showUsersOfGroup", ["id" => $group->getId()]);
         }
@@ -82,10 +87,22 @@ class GroupController extends Controller
     }
 
     /**
-     * @Route("/delete", name="deleteGroup")
+     * @Route("/{id}/delete", name="deleteGroup")
      */
-    public function deleteGroupAction()
+    public function deleteGroupAction($id)
     {
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository("ContactsBundle:Group");
+
+        $groupToDelete = $repository->findOneById($id);
+
+        if (!$groupToDelete) {
+            return $this->redirectToRoute("showAllGroups");
+        }
+
+        $em->remove($groupToDelete);
+        $em->flush();
+
         return $this->render('ContactsBundle:Group:delete_group.html.twig', array(// ...
         ));
     }
@@ -93,7 +110,7 @@ class GroupController extends Controller
     /**
      * @Route("/{userId}/{groupId}/deleteUserFromGroup", name="deleteUserFromGroup")
      */
-    public function deleteUserFromGroupAction($userId, $groupId)
+    public function deleteUserFromGroupAction(Request $request, $userId, $groupId)
     {
         $em = $this->getDoctrine()->getManager();
         $repository = $em->getRepository("ContactsBundle:Group");
@@ -109,6 +126,11 @@ class GroupController extends Controller
         $user->removeGroup($group);
         $em->persist($group);
         $em->flush();
+
+        //if i delete user from group by user site it render to this user site
+        if (strpos($request->headers->get('referer'), 'group') == false) {
+            return $this->redirectToRoute("showUser", ["id" => $userId]);
+        }
 
         return $this->redirectToRoute("showUsersOfGroup", ["id" => $groupId]);
     }

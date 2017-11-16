@@ -2,6 +2,7 @@
 
 namespace ContactsBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -20,6 +21,15 @@ class UserType extends AbstractType
             ->add('firstname', TextType::class, ['attr' => ['class' => "form-control"]])
             ->add('lastname', TextType::class, ['attr' => ['class' => "form-control"], 'required' => false])
             ->add('description', TextareaType::class, ['attr' => ['class' => "form-control"], 'required' => false])
+            ->add('groups', EntityType::class, [
+                'class' => 'ContactsBundle:Group',
+                'choice_label' => 'name',
+                'expanded' => true,
+                'multiple' => true,
+                'attr' => [
+                    'required' => false
+                ]
+            ])
             ->add('save', SubmitType::class, ['label' => 'Zapisz kontakt'], ['attr' => ['class' => "btn btn-default"]]);
     }
 

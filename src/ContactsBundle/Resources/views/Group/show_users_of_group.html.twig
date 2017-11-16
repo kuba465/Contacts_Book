@@ -6,7 +6,13 @@
 {% endblock %}
 
 {% block header %}
-    <h1>Twoje kontakty w tej grupie: </h1>
+    <h1>Twoje kontakty w grupie {{ group.name }}: </h1>
+    <a href="{{ url('editGroup', {'id':group.id}) }}">
+        <button type="button" class="btn btn-warning">Edytuj grupę / Dodaj osobę</button>
+    </a>
+    <a href="{{ url('deleteGroup', {'id':group.id}) }}">
+        <button type="button" class="btn btn-danger">Usuń grupę</button>
+    </a>
 {% endblock %}
 
 {% block body %}

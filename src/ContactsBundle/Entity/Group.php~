@@ -2,6 +2,9 @@
 
 namespace ContactsBundle\Entity;
 
+use ContactsBundle\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,6 +40,10 @@ class Group
 
     /**
      * @ORM\ManyToMany(targetEntity="User", mappedBy="groups")
+     * @ORM\JoinTable(name="users_groups",
+     *      joinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")}
+     * )
      */
     private $users;
 
@@ -97,22 +104,23 @@ class Group
     {
         return $this->description;
     }
+
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     /**
      * Add user
      *
-     * @param \ContactsBundle\Entity\User $user
+     * @param User $user
      *
      * @return Group
      */
-    public function addUser(\ContactsBundle\Entity\User $user)
+    public function addUser(User $user)
     {
         $this->users[] = $user;
 
@@ -122,9 +130,9 @@ class Group
     /**
      * Remove user
      *
-     * @param \ContactsBundle\Entity\User $user
+     * @param User $user
      */
-    public function removeUser(\ContactsBundle\Entity\User $user)
+    public function removeUser(User $user)
     {
         $this->users->removeElement($user);
     }
@@ -132,7 +140,7 @@ class Group
     /**
      * Get users
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getUsers()
     {

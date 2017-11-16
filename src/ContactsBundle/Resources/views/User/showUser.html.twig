@@ -8,7 +8,7 @@
 
 {% block header %}
     <a href="{{ url('modify', {'id':user.id}) }}">
-        <button type="button" class="btn btn-warning">Edytuj użytkownika</button>
+        <button type="button" class="btn btn-warning">Edytuj / Dodaj grupę</button>
     </a>
     <a href="{{ url('delete', {'id':user.id}) }}">
         <button type="button" class="btn btn-danger">Usuń kontakt</button>
@@ -19,6 +19,18 @@
     <div class="user_datas">
         <h1>{{ user.firstname }} {{ user.lastname }}</h1>
         <p>{{ user.description }}</p>
+        <h3>Grupy:</h3>
+        <ul class="list-group">
+            {% for group in groups %}
+            <li class="list-group-item">
+                {{ group.name }}
+                <a href="{{ url('deleteUserFromGroup', {'userId':user.id, 'groupId':group.id}) }}">
+                    <button type="button" class="btn btn-danger btn-sm">Usuń kontakt z tej grupy</button>
+                </a>
+                {% else %}
+        </ul>
+        brak grup
+        {% endfor %}
     </div>
     <div class="user_phones">
         <h3>Numery telefonów:</h3>
