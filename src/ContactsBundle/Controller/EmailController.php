@@ -85,8 +85,7 @@ class EmailController extends Controller
         $em->remove($emailToDelete);
         $em->flush();
 
-        return $this->render('ContactsBundle:Email:delete_email.html.twig', array(// ...
-        ));
+        return $this->redirectToRoute("showUser", ["id" => $userId]);
     }
 
 }

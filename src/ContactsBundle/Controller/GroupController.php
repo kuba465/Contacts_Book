@@ -71,7 +71,7 @@ class GroupController extends Controller
             $em->flush();
 
             $users = $group->getUsers();
-            foreach ($users as $user) {
+            foreach ($users as $user) {//niestety nie dodaje nowych osób...
                 if (!$group->getUsers()->contains($user)) {
                     $user->addGroup($group);
                 }
@@ -103,8 +103,7 @@ class GroupController extends Controller
         $em->remove($groupToDelete);
         $em->flush();
 
-        return $this->render('ContactsBundle:Group:delete_group.html.twig', array(// ...
-        ));
+        return $this->redirectToRoute("showAllGroups");
     }
 
     /**

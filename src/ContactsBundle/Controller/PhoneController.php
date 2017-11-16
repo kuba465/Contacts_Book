@@ -87,7 +87,6 @@ class PhoneController extends Controller
         $em->remove($phoneToDelete);
         $em->flush();
 
-        return $this->render('ContactsBundle:Phone:delete_phone.html.twig', array(// ...
-        ));
+        return $this->redirectToRoute("showUser", ["id" => $userId]);
     }
 }

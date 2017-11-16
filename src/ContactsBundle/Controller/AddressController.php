@@ -85,8 +85,7 @@ class AddressController extends Controller
         $em->remove($addressToDelete);
         $em->flush();
 
-        return $this->render('ContactsBundle:Address:delete_address.html.twig', array(// ...
-        ));
+        return $this->redirectToRoute("showUser", ["id" => $userId]);
     }
 
 }

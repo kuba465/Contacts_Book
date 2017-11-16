@@ -98,8 +98,7 @@ class UserController extends Controller
         $em->remove($userToDelete);
         $em->flush();
 
-        return $this->render('ContactsBundle:User:delete.html.twig', array(// ...
-        ));
+        return $this->redirectToRoute("showAll");
     }
 
     /**
