@@ -1,4 +1,16 @@
-Contacts_Book
-=============
+# Contacts book by Jakub Paluszkiewicz
 
-A Symfony project created on November 5, 2017, 11:46 am.
+### Contacts book was wrote in Symfony
+
+### Functionals:
+
+You can add contacts. Every contact would have:
+  - phone(number and type)
+  - e-mail(address and type)
+  - address(city, street, house nr and flat nr)
+Relation - OneToMany
+
+There is a functionality where you can:
+  - create groups
+  - add contact to group
+Relation - ManyToMany
