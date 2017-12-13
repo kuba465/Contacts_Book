@@ -14,6 +14,6 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="POZ_PHP_W_02_Symfony_2" />
+    <orderEntry type="module" module-name="To-Do-List" />
   </component>
 </module>

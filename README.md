@@ -2,7 +2,7 @@
 
 ### Contacts book was wrote in Symfony
 
-### Functionals:
+### Functionalities:
 
 You can add contacts. Every contact would have:
   - phone(number and type)

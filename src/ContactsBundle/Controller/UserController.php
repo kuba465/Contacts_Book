@@ -11,7 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
-
+/**
+ * @Route("/contacts")
+ */
 class UserController extends Controller
 {
     /**

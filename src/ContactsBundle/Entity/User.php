@@ -72,6 +72,12 @@ class User
     private $groups;
 
     /**
+     * @ORM\ManyToOne(targetEntity="FOSUser")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $fosUser;
+
+    /**
      * Get id
      *
      * @return int
@@ -297,5 +303,29 @@ class User
     public function getGroups()
     {
         return $this->groups;
+    }
+
+    /**
+     * Set fosUser
+     *
+     * @param \ContactsBundle\Entity\FOSUser $fosUser
+     *
+     * @return User
+     */
+    public function setFosUser(\ContactsBundle\Entity\FOSUser $fosUser = null)
+    {
+        $this->fosUser = $fosUser;
+
+        return $this;
+    }
+
+    /**
+     * Get fosUser
+     *
+     * @return \ContactsBundle\Entity\FOSUser
+     */
+    public function getFosUser()
+    {
+        return $this->fosUser;
     }
 }

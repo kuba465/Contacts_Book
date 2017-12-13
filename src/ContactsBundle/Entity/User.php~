@@ -72,6 +72,12 @@ class User
     private $groups;
 
     /**
+     * @ORM\ManyToOne(targetEntity="FOSUser")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $fosUser;
+
+    /**
      * Get id
      *
      * @return int
