@@ -1,5 +1,7 @@
 # Contacts book by Jakub Paluszkiewicz
 
+## Project that I created during my course in CodersLab
+
 ### Contacts book was wrote in Symfony
 
 ### Functionalities:
